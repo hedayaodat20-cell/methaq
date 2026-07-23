@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ميثاق الحفظ - حقوق النشر محفوظة لـ هدايه عودات</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Elegant Arabic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        amiri: ['Amiri', 'serif'],
+                    },
+                    colors: {
+                        parchment: {
+                            50: '#FDFBF7',  // ورق المخطوطات الفاخر
+                            100: '#F5EFE0', // كريمي ناعم للبطاقات الفاتحة
+                            200: '#EADECA', // لون البيج العتيق للحدود والتظليلات
+                            300: '#DCC9A7', // ذهبي مطفي كلاسيكي
+                        },
+                        espresso: {
+                            950: '#180E0A', // لون القهوة الداكن جداً
+                            900: '#26150D', // لون التباين الفائق والنصوص الأساسية
+                            800: '#3D281E', // الشوكولاتة الدافئة للحدود والبطاقات النشطة
+                            700: '#543B2E',
+                            600: '#6D3914', // لون البني الذهبي الدافئ
+                            500: '#8A724C',
+                        },
+                        gold: {
+                            light: '#FFEAA5',  // تدرج ذهبي مشرق للإضاءة والنصوص المهمة
+                            medium: '#D4AF37', // الذهبي الكلاسيكي الأصيل لعلامات الآيات والزخارف
+                            dark: '#A05E22',   // البني الذهبي الدافئ
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #FDFBF7; /* خلفية ناصعة ومريحة لقرطاسية فاخرة */
+            color: #26150D; /* نص أساسي بلون القهوة الداكنة لتباين فائق الوضوح وقراءة صحية */
+            background-image: 
+                radial-gradient(circle at top right, rgba(212, 175, 55, 0.05), transparent 45%),
+                radial-gradient(circle at bottom left, rgba(138, 104, 87, 0.05), transparent 45%);
+        }
+        /* تدرج ذهبي دافئ وعميق للنصوص الرئيسية */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #26150D 0%, #6D3914 50%, #A05E22 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* تدرج خلفية دافئ للنقاط التفاعلية */
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #FFEAA5 0%, #D4AF37 50%, #A05E22 100%);
+        }
+        /* تظليل ناعم للبطاقات لمنحها عمقاً مريحاً */
+        .custom-card-shadow {
+            box-shadow: 0 10px 30px -15px rgba(38, 21, 13, 0.08);
+        }
+        /* تصميم شريط التمرير الأنيق لتناسق الألوان */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F5EFE0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <!-- الرأس (Header) -->
+    <header class="border-b border-parchment-200 bg-white/95 backdrop-blur-md sticky top-0 z-50 px-8 py-4 custom-card-shadow">
+        <div class="max-w-[1600px] mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-reverse space-x-3.5">
+                <div class="w-11 h-11 rounded-2xl gold-gradient-bg flex items-center justify-center shadow-md shadow-gold-medium/10 transition-transform hover:rotate-6 duration-300">
+                    <svg class="w-6 h-6 text-espresso-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-black gold-gradient-text tracking-wide font-cairo">مِيثاق الحِفْظِ</h1>
+                    <p class="text-[10px] text-espresso-600 font-extrabold tracking-wider">تخطيط  الذكي التسميع والترحيل التلقائي</p>
+                </div>
+            </div>
+
+            <!-- معلومات اليوم الحالي -->
+            <div class="flex items-center space-x-reverse space-x-4">
+                <div class="bg-parchment-100 px-4 py-2 rounded-2xl border border-parchment-200 flex items-center space-x-reverse space-x-2.5">
+                    <span class="text-xs text-espresso-700 font-bold">اليوم الأحدث في رحلتكِ:</span>
+                    <span id="headerDayIndicator" class="text-xs font-black text-gold-dark bg-white/80 px-2.5 py-1 rounded-lg border border-parchment-200 shadow-sm">اليوم الأول 🌱</span>
+                </div>
+                <button onclick="triggerResetModal()" class="text-xs text-red-700 bg-red-500/10 px-3.5 py-2 rounded-xl border border-red-500/15 hover:bg-red-500/20 transition-all font-bold">
+                    البدء من جديد
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- مساحة العمل الرئيسية ممتدة بالكامل لتناسب شاشة اللابتوب -->
+    <main class="flex-grow w-full px-8 py-8 max-w-[1700px] mx-auto flex flex-col space-y-8">
+
+        <!-- القسم العلوي: التحكم والتقدم وعناوين الأيام -->
+        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 pb-4 border-b border-parchment-200">
+            <div>
+                <h2 class="text-3xl font-black text-espresso-950 flex items-center space-x-reverse space-x-3.5">
+                    <span id="mainDayTitle" class="gold-gradient-text font-cairo">اليوم الأول</span>
+                    <span class="text-xs bg-parchment-100 text-espresso-800 px-3 py-1.5 rounded-full border border-parchment-200 font-bold" id="currentDateLabel">جاري جلب التاريخ...</span>
+                </h2>
+                <p class="text-xs text-espresso-600 mt-2 font-medium">مساحتكِ الحرة لتسميع وحفظ كتاب الله غيباً؛ ما تدوّنينه اليوم كحفظ جديد، يظهر أمامكِ غداً تلقائياً كمراجعة مثبتة.</p>
+            </div>
+
+            <!-- التنقل السريع بين الأيام -->
+            <div class="flex items-center space-x-reverse space-x-3 bg-parchment-100 p-2 rounded-2xl border border-parchment-200 custom-card-shadow">
+                <button onclick="changeDay(-1)" class="bg-white hover:bg-parchment-200 text-espresso-900 p-2.5 rounded-xl transition-all shadow-sm border border-parchment-200">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                </button>
+                <span id="dayNavigationLabel" class="text-xs font-black text-espresso-950 px-4 tracking-wider">اليوم ١</span>
+                <button onclick="changeDay(1)" class="bg-white hover:bg-parchment-200 text-espresso-900 p-2.5 rounded-xl transition-all shadow-sm border border-parchment-200">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- التخطيط: [التحكم] باليمين والـ [بوكسات] باليسار -->
+        <div class="grid grid-cols-12 gap-8 items-start">
+            
+            <!-- 📁 الصندوق الأيمن: [ ١- اسم السورة والآيات يدويّاً ] -->
+            <div class="col-span-12 lg:col-span-3 bg-white p-7 rounded-3xl border border-parchment-200 space-y-6 custom-card-shadow">
+                <div>
+                    <span class="text-[10px] font-black text-gold-dark uppercase tracking-widest block mb-1">الخطوة الأولى</span>
+                    <h3 class="text-lg font-black text-espresso-950">إعداد السورة والورد</h3>
+                </div>
+
+                <!-- إدخال اسم السورة يدوياً -->
+                <div class="space-y-2">
+                    <label class="block text-xs text-espresso-800 font-bold">١. اسم السورة المراد حفظها ✍️</label>
+                    <input type="text" id="surahInput" oninput="handleSurahNameChange(this.value)" placeholder="اكتبي اسم السورة هنا..." class="w-full bg-parchment-50 text-espresso-950 text-sm font-black p-3.5 rounded-xl border border-parchment-200 focus:outline-none focus:border-gold-medium focus:ring-1 focus:ring-gold-medium transition">
+                </div>
+
+                <!-- اختيار نطاق الآيات يدوياً -->
+                <div class="space-y-3 pt-2">
+                    <label class="block text-xs text-espresso-800 font-bold">٢. الآيات المراد حفظها</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <span class="text-[10px] text-espresso-500 font-bold block mb-1">من آية</span>
+                            <input type="number" id="startVerseInput" min="1" value="1" onchange="onRangeChanged()" class="w-full bg-parchment-50 text-center text-espresso-950 p-3 rounded-xl border border-parchment-200 focus:outline-none focus:border-gold-medium transition font-bold text-sm">
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-espresso-500 font-bold block mb-1">إلى آية</span>
+                            <input type="number" id="endVerseInput" min="1" value="5" onchange="onRangeChanged()" class="w-full bg-parchment-50 text-center text-espresso-950 p-3 rounded-xl border border-parchment-200 focus:outline-none focus:border-gold-medium transition font-bold text-sm">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- إحصائية الحفظ لليوم الحالي -->
+                <div class="pt-4 border-t border-parchment-200">
+                    <div class="flex justify-between text-xs mb-2 font-bold">
+                        <span class="text-espresso-600">حجم ورد اليوم</span>
+                        <span id="currentDayVersesCount" class="text-gold-dark font-extrabold">٥ آيات</span>
+                    </div>
+                    <div class="p-4 bg-parchment-50 rounded-2xl border border-parchment-200 text-center">
+                        <span class="text-[10px] text-espresso-600 block font-bold mb-1">إجمالي الآيات المحفوظة:</span>
+                        <span id="totalVersesLabel" class="text-xl font-black text-gold-dark">٠ آية</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- المساحة اليسرى: منطقة الصناديق التفاعلية للتسميع المكتوب غيباً -->
+            <div class="col-span-12 lg:col-span-9">
+                
+                <!-- الواجهة الديناميكية: تتغير تلقائياً حسب اليوم -->
+                <div id="boxesContainer" class="transition-all duration-300">
+                    <!-- سيتم توليد البوكسات ديناميكياً هنا -->
+                </div>
+
+                <!-- زر مطابقة وتصحيح التسميع -->
+                <div class="mt-8 flex flex-col md:flex-row justify-between items-center gap-4 bg-white p-6 rounded-3xl border border-parchment-200 custom-card-shadow">
+                    <div class="text-right">
+                        <h4 class="text-sm font-black text-espresso-950">٣- اعتماد الحفظ ونقله ليوم غد تلقائياً</h4>
+                        <p class="text-xs text-espresso-600 mt-1 font-medium">عند ترحيل اليوم، سيقوم النظام تلقائياً بنسخ كامل النص الذي كتبتِهِ اليوم ليعرضه لكِ غداً في بوكس المراجعة.</p>
+                    </div>
+                    <div class="flex space-x-reverse space-x-3 w-full md:w-auto">
+                        <button onclick="compareReviewText()" id="compareReviewBtn" class="hidden bg-parchment-100 hover:bg-parchment-200 text-espresso-950 border border-parchment-200 px-6 py-3.5 rounded-xl text-xs font-black transition-all">
+                            <span>🔍 مطابقة تسميع المراجعة غيباً</span>
+                        </button>
+                        <button onclick="commitAndGoToNextDay()" class="gold-gradient-bg hover:opacity-95 text-espresso-950 px-6 py-3.5 rounded-xl text-xs font-black transition-all flex items-center justify-center space-x-reverse space-x-2 shadow-md shadow-gold-medium/10 w-full md:w-auto">
+                            <span>حفظ وانتقال لليوم التالي ➔</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- لوحة عرض الفروقات الذكية والتصحيح التلقائي -->
+                <div id="diffPanel" class="hidden mt-6 bg-white rounded-3xl border-2 border-gold-medium/30 p-6 space-y-4 transition-all duration-300 custom-card-shadow">
+                    <div class="flex justify-between items-center border-b border-parchment-200 pb-3">
+                        <h4 class="text-sm font-black text-espresso-950 flex items-center space-x-reverse space-x-2">
+                            <span class="text-gold-medium text-lg">✨</span>
+                            <span>نتائج تدقيق ومطابقة المراجعة الغيبية</span>
+                        </h4>
+                        <button onclick="closeDiffPanel()" class="text-xs text-espresso-500 hover:text-espresso-950 transition font-bold">إغلاق التقرير ✕</button>
+                    </div>
+                    <div class="p-4 bg-parchment-50 rounded-2xl border border-parchment-200 space-y-3">
+                        <p class="text-xs text-espresso-600 font-semibold leading-relaxed">الكلمات باللون <span class="text-green-600 font-black">الأخضر</span> تعني مطابقتها لحفظ أمس، بينما الكلمات باللون <span class="text-red-500 font-black">الأحمر</span> تشير إلى وجود اختلاف في الكتابة لتنتبهي لها وتصححيها يدوياً:</p>
+                        <div id="diffOutput" class="text-xl md:text-2xl font-amiri text-espresso-950 text-center leading-loose tracking-wider py-5 bg-white rounded-xl border border-parchment-200 p-5 min-h-[100px]">
+                            <!-- مقارنة الكلمات الملونة تظهر هنا -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- شريط رحلة الأيام للتراكم والوفرة البصرية أسفل الشاشة -->
+        <div class="bg-white p-5 rounded-3xl border border-parchment-200 custom-card-shadow">
+            <div class="flex items-center justify-between mb-4 px-2">
+                <h4 class="text-xs font-black text-espresso-950 flex items-center space-x-reverse space-x-2">
+                    <span class="w-2 h-2 rounded-full gold-gradient-bg animate-pulse"></span>
+                    <span>سجل رحلة الحفظ وتراكم الإنجازات الروحية</span>
+                </h4>
+                <span class="text-[11px] text-espresso-650 font-bold">تصفحي الأيام السابقة متى شئتِ لتعديل المراجعة أو الحفظ</span>
+            </div>
+            <div id="timelineScroll" class="flex items-center space-x-reverse space-x-3.5 overflow-x-auto py-2 px-1">
+                <!-- تُعبأ الأيام هنا -->
+            </div>
+        </div>
+
+    </main>
+
+    <!-- فوتر مبسط ومريح -->
+    <footer class="border-t border-parchment-200 bg-white py-4 px-8 mt-6">
+        <div class="max-w-[1600px] mx-auto flex flex-col md:flex-row justify-between items-center text-[11px] text-espresso-500 font-bold space-y-2 md:space-y-0">
+            <div>
+                <span>ميثاق الحفظ والاستمرارية والمراجعة الذاتية • خطة السكينة النفسية والاتصال ببركات آيات الذكر الحكيم.</span>
+            </div>
+            <div class="flex items-center space-x-reverse space-x-2">
+                <span class="text-gold-dark font-extrabold">جميع حقوق النشر محفوظة لتصميم وتطوير هدايه عودات © ٢٠٢٦ 🌿</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- توست مخصص للإشعارات اللطيفة دون إزعاج نافذة المتصفح -->
+    <div id="toastNotification" class="hidden fixed bottom-8 left-8 max-w-md bg-espresso-900 border-2 border-gold-medium rounded-2xl p-5 flex items-center justify-between shadow-2xl z-50 transition-all duration-300">
+        <div class="flex items-center space-x-reverse space-x-3.5">
+            <span class="text-2xl" id="toastEmoji">✨</span>
+            <div>
+                <h4 class="text-sm font-black text-gold-light" id="toastTitle">مبارك عليكِ الحفظ!</h4>
+                <p class="text-xs text-parchment-100 mt-0.5" id="toastDesc">لقد تم حفظ وتوثيق تقدمكِ بنجاح.</p>
+            </div>
+        </div>
+        <button onclick="hideToast()" class="text-espresso-600 hover:text-white transition-all font-bold pr-4">✕</button>
+    </div>
+
+    <!-- نافذة تأكيد التهيئة (Modal) -->
+    <div id="resetModal" class="hidden fixed inset-0 z-50 bg-espresso-950/85 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white border-2 border-gold-medium max-w-md w-full rounded-3xl p-6 shadow-2xl space-y-4">
+            <h3 class="text-lg font-black text-espresso-950">البدء من جديد ومسح السجل؟</h3>
+            <p class="text-xs text-espresso-600 leading-relaxed font-semibold">
+                سيتم تصفير سجل رحلتكِ لتبدئي من اليوم الأول من جديد، وتأسيس صفحة جديدة من الالتزام والبركة والوفرة الروحية، مع ربط تاريخ البداية باليوم الفعلي الحالي.
+            </p>
+            <div class="flex justify-end space-x-reverse space-x-3 pt-2">
+                <button onclick="closeResetModal()" class="px-4 py-2 bg-parchment-100 text-espresso-900 border border-parchment-200 rounded-xl text-xs font-bold transition">تراجع</button>
+                <button onclick="confirmReset()" class="px-4 py-2 bg-red-600 text-white rounded-xl text-xs font-bold transition">نعم، ابدأ من جديد</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- كود المنطق التفاعلي (JS) -->
+    <script>
+        // بنية الحفظ الافتراضية مع ربط تاريخ الانطلاق بالتقويم الحقيقي
+        let state = {
+            currentDay: 1, // اليوم الفعلي في التصفح حالياً
+            maxReachedDay: 1, // أقصى يوم تم الوصول إليه
+            startDate: new Date().toISOString(), // تاريخ انطلاق الميثاق الفعلي من التقويم
+            days: {
+                1: {
+                    dayNum: 1,
+                    surahName: "الملك",  // افتراضي لليوم الأول
+                    startVerse: 1,
+                    endVerse: 5,
+                    todayTyped: "",            // ما كتبتِهِ لليوم
+                    yesterdaySavedText: "",    // النص التلقائي الذي تم ترحيله من اليوم السابق
+                    yesterdayTypedReview: "",  // ما تكتبينه اليوم غيباً لاختبار مراجعة أمس
+                    reviewMode: 'read',        // 'read' للقراءة أو 'type' للكتابة غيباً للمراجعة
+                    isCompleted: false
+                }
+            }
+        };
+
+        window.onload = function() {
+            loadSavedState();
+            renderLayoutAndBoxes();
+            updateGlobalStats();
+        };
+
+        // استرجاع السجل من جهاز هدايه لضمان الاستمرارية وعدم الضياع
+        function loadSavedState() {
+            const saved = localStorage.getItem('hudaiah_quran_workbook_state');
+            if (saved) {
+                try {
+                    state = JSON.parse(saved);
+                    // التأكد من وجود تاريخ بداية مسبق وإلا نقوم بإنشائه فوراً
+                    if (!state.startDate) {
+                        state.startDate = new Date().toISOString();
+                        saveCurrentState();
+                    }
+                } catch(e) {
+                    console.error("Error loading state", e);
+                }
+            }
+        }
+
+        function saveCurrentState() {
+            localStorage.setItem('hudaiah_quran_workbook_state', JSON.stringify(state));
+        }
+
+        // معالجة كتابة اسم السورة يدوياً
+        function handleSurahNameChange(val) {
+            const currentDayData = state.days[state.currentDay];
+            if (currentDayData) {
+                currentDayData.surahName = val;
+                saveCurrentState();
+            }
+        }
+
+        // عند تغيير نطاق الآيات يدوياً
+        function onRangeChanged() {
+            const start = parseInt(document.getElementById('startVerseInput').value) || 1;
+            const end = parseInt(document.getElementById('endVerseInput').value) || 5;
+            const currentDayData = state.days[state.currentDay];
+
+            if (currentDayData) {
+                const finalStart = Math.max(1, start);
+                const finalEnd = Math.max(finalStart, end);
+
+                document.getElementById('startVerseInput').value = finalStart;
+                document.getElementById('endVerseInput').value = finalEnd;
+
+                currentDayData.startVerse = finalStart;
+                currentDayData.endVerse = finalEnd;
+                
+                const count = finalEnd - finalStart + 1;
+                document.getElementById('currentDayVersesCount').textContent = `${count} آيات`;
+                
+                saveCurrentState();
+                updateGlobalStats();
+            }
+        }
+
+        // دالة بناء وتوزيع البوكسات وتطبيق مخطط هدايه عودات
+        function renderLayoutAndBoxes() {
+            const dayNum = state.currentDay;
+            
+            // التأكد من توفر كائن اليوم الحالي
+            if (!state.days[dayNum]) {
+                const prevDay = state.days[dayNum - 1] || {};
+                
+                // ترحيل نص "اليوم" لليوم السابق ليكون هو "مراجعة أمس" التلقائي لليوم الجديد
+                const autoYesterdayText = prevDay.todayTyped || "";
+
+                state.days[dayNum] = {
+                    dayNum: dayNum,
+                    surahName: prevDay.surahName || "الملك",
+                    startVerse: prevDay.endVerse ? prevDay.endVerse + 1 : 1,
+                    endVerse: prevDay.endVerse ? prevDay.endVerse + 5 : 5,
+                    todayTyped: "",
+                    yesterdaySavedText: autoYesterdayText, // ترحيل تلقائي ممتاز!
+                    yesterdayTypedReview: "",
+                    reviewMode: 'read',
+                    isCompleted: false
+                };
+            }
+
+            const activeDayData = state.days[dayNum];
+            
+            // تعبئة حقول الإعدادات باليمين
+            document.getElementById('surahInput').value = activeDayData.surahName || "";
+            document.getElementById('startVerseInput').value = activeDayData.startVerse;
+            document.getElementById('endVerseInput').value = activeDayData.endVerse;
+            
+            const count = activeDayData.endVerse - activeDayData.startVerse + 1;
+            document.getElementById('currentDayVersesCount').textContent = `${count} آيات`;
+
+            // تحديث العناوين في الواجهة
+            document.getElementById('mainDayTitle').textContent = `اليوم ${getArabicDayLabel(dayNum)}`;
+            document.getElementById('currentDateLabel').textContent = getFormattedDate(dayNum);
+            document.getElementById('dayNavigationLabel').textContent = `اليوم ${dayNum}`;
+            document.getElementById('headerDayIndicator').textContent = `اليوم ${getArabicDayLabel(state.maxReachedDay)} 🌱`;
+
+            const container = document.getElementById('boxesContainer');
+            container.innerHTML = '';
+
+            // إظهار وإخفاء زر مقارنة المراجعة الغيبية حسب اليوم
+            const compareBtn = document.getElementById('compareReviewBtn');
+
+            // تطبيق التخطيط بناءً على اليوم:
+            if (dayNum === 1) {
+                compareBtn.classList.add('hidden');
+                // اليوم الأول: بوكس واحد فقط فارغ لتسميع ورد اليوم
+                container.className = "grid grid-cols-1 gap-6";
+                container.innerHTML = `
+                    <div class="bg-white p-8 rounded-3xl border border-parchment-200 flex flex-col space-y-4 shadow-md custom-card-shadow">
+                        <div class="flex justify-between items-center border-b border-parchment-200 pb-3">
+                            <h4 class="text-base font-black text-espresso-950 flex items-center space-x-reverse space-x-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-gold-medium animate-pulse"></span>
+                                <span>التسميع للآيات المراد حفظها اليوم غيباً (كتابة الجديد)</span>
+                            </h4>
+                            <span class="text-xs text-gold-dark bg-parchment-100 font-extrabold px-3 py-1 rounded-full border border-parchment-200">حفظ اليوم الأول</span>
+                        </div>
+                        <textarea id="todayTypedArea" oninput="saveTypedText(this.value, 'today')" placeholder="اكتبي آيات اليوم غيباً وبكل هدوء وسكينة هنا..." class="w-full min-h-[300px] bg-parchment-50 text-xl font-amiri text-espresso-950 p-6 rounded-2xl border border-parchment-200 focus:outline-none focus:border-gold-medium transition leading-loose tracking-wide placeholder:text-espresso-600 placeholder:text-sm placeholder:font-cairo resize-y">${activeDayData.todayTyped || ""}</textarea>
+                        <div class="text-left text-[11px] text-espresso-600 font-bold">
+                            اكتبي الآيات غيباً  بتمهل، واطمئني فكل حرف يُحسب ببركته في ميثاقكِ.
+                        </div>
+                    </div>
+                `;
+            } else {
+                // اليوم الثاني فما فوق: بوكسين متجاورين مستغلين كامل عرض شاشة اللابتوب
+                container.className = "grid grid-cols-1 xl:grid-cols-2 gap-6 items-stretch";
+                
+                const isReadMode = activeDayData.reviewMode === 'read';
+                let reviewBoxContent = '';
+
+                if (isReadMode) {
+                    compareBtn.classList.add('hidden');
+                    // وضع القراءة: نعرض نص أمس التلقائي المحفوظ مباشرة ليقرأه ويراجعه بالعين
+                    reviewBoxContent = `
+                        <div class="bg-parchment-50 p-6 rounded-2xl border border-parchment-200 flex items-center justify-center min-h-[250px] overflow-y-auto max-h-[350px]">
+                            <p class="text-xl md:text-2xl font-amiri text-espresso-900 text-center leading-loose tracking-wide italic select-none">
+                                ${activeDayData.yesterdaySavedText ? activeDayData.yesterdaySavedText : "لم يتم تسجيل آيات بالأمس يدوياً."}
+                            </p>
+                        </div>
+                    `;
+                } else {
+                    compareBtn.classList.remove('hidden');
+                    // وضع التسميع المكتوب: نعطيها خانة للكتابة وتجربة تسميع آيات الأمس يدوياً لمطابقتها مع الحفظ الأصلي
+                    reviewBoxContent = `
+                        <textarea id="yesterdayTypedReviewArea" oninput="saveTypedText(this.value, 'yesterday')" placeholder="حاولي كتابة آيات مراجعة أمس غيباً هنا لمطابقتها وتصحيحها..." class="w-full min-h-[250px] bg-parchment-50 text-xl font-amiri text-espresso-950 p-6 rounded-2xl border border-parchment-200 focus:outline-none focus:border-gold-medium transition leading-loose tracking-wide placeholder:text-espresso-600 placeholder:text-sm placeholder:font-cairo resize-y">${activeDayData.yesterdayTypedReview || ""}</textarea>
+                    `;
+                }
+
+                container.innerHTML = `
+                    <!-- البوكس الأول: التسميع للآيات المراد حفظها اليوم -->
+                    <div class="bg-white p-8 rounded-3xl border border-parchment-200 flex flex-col justify-between shadow-md custom-card-shadow">
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-parchment-200 pb-3">
+                                <h4 class="text-base font-black text-espresso-950 flex items-center space-x-reverse space-x-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gold-medium animate-pulse"></span>
+                                    <span>التسميع للآيات المراد حفظها اليوم غيباً</span>
+                                </h4>
+                                <span class="text-xs bg-gold-dark/10 text-gold-dark px-3 py-1 rounded-full border border-gold-dark/20 font-bold">تسميع اليوم الجديد</span>
+                            </div>
+                            <textarea id="todayTypedArea" oninput="saveTypedText(this.value, 'today')" placeholder="اكتبي آيات الورد الجديد هنا غيباً من صدركِ..." class="w-full min-h-[250px] bg-parchment-50 text-xl font-amiri text-espresso-950 p-6 rounded-2xl border border-parchment-200 focus:outline-none focus:border-gold-medium transition leading-loose tracking-wide placeholder:text-espresso-600 placeholder:text-sm placeholder:font-cairo resize-y">${activeDayData.todayTyped || ""}</textarea>
+                        </div>
+                        <div class="text-[11px] text-espresso-600 mt-3 font-bold">تأني بالترتيل وأنتِ تكتبين لتستشعري بركة الكلمات في وجدانكِ.</div>
+                    </div>
+
+                    <!-- البوكس الثاني: مراجعة آيات أمس (ترحيل تلقائي ممتاز) -->
+                    <div class="bg-white p-8 rounded-3xl border border-parchment-200 flex flex-col justify-between shadow-md custom-card-shadow">
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-parchment-200 pb-3">
+                                <h4 class="text-base font-black text-espresso-950 flex items-center space-x-reverse space-x-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-600 animate-pulse"></span>
+                                    <span>مراجعة آيات أمس (تلقائية) 🔄</span>
+                                </h4>
+                                <div class="flex items-center bg-parchment-100 p-1 rounded-lg border border-parchment-200 shadow-inner">
+                                    <button onclick="toggleReviewMode('read')" class="text-[10px] px-3 py-1 rounded-md transition-all font-black ${isReadMode ? 'bg-gold-medium text-espresso-950 shadow-sm' : 'text-espresso-700'}" id="reviewReadToggle">قراءة ومراجعة</button>
+                                    <button onclick="toggleReviewMode('type')" class="text-[10px] px-3 py-1 rounded-md transition-all font-black ${!isReadMode ? 'bg-gold-medium text-espresso-950 shadow-sm' : 'text-espresso-700'}" id="reviewTypeToggle">تسميع غيباً</button>
+                                </div>
+                            </div>
+                            ${reviewBoxContent}
+                        </div>
+                        <div class="text-[11px] text-espresso-600 mt-3 font-bold" id="reviewBoxHelpLabel">
+                            ${isReadMode ? 'تظهر آيات أمس تلقائياً لمراجعتها وتأكيدها بالعين بكل وضوح.' : 'اكتبي آيات مراجعة أمس غيباً لمطابقتها الفورية وتأصيل حفظكِ.'}
+                        </div>
+                    </div>
+                `;
+            }
+
+            // إخفاء لوحة المطابقة الفروق عند الانتقال أو التحديث لمنع التشتيت
+            closeDiffPanel();
+            renderTimeline();
+        }
+
+        // حفظ النصوص المكتوبة أولاً بأول للحماية والاستمرارية
+        function saveTypedText(val, type) {
+            const currentDayData = state.days[state.currentDay];
+            if (currentDayData) {
+                if (type === 'today') {
+                    currentDayData.todayTyped = val;
+                } else {
+                    currentDayData.yesterdayTypedReview = val;
+                }
+                saveCurrentState();
+            }
+        }
+
+        // التبديل بين وضعية القراءة أو التسميع لمراجعة الأمس
+        function toggleReviewMode(mode) {
+            const currentDayData = state.days[state.currentDay];
+            if (currentDayData) {
+                currentDayData.reviewMode = mode;
+                saveCurrentState();
+                renderLayoutAndBoxes();
+            }
+        }
+
+        // تدقيق وفحص التسميع الذاتي غيباً لورد الأمس (مقارنة ذكية للكلمات)
+        function compareReviewText() {
+            const currentDayData = state.days[state.currentDay];
+            if (!currentDayData) return;
+
+            const savedYesterdayText = currentDayData.yesterdaySavedText || "";
+            const typedReviewText = currentDayData.yesterdayTypedReview || "";
+
+            if (!typedReviewText.trim()) {
+                showToast("تنبيه التسميع 🕊️", "يرجى كتابة تسميع المراجعة غيباً أولاً في البوكس لتتمكني من مطابقته.", "⚠️");
+                return;
+            }
+
+            const panel = document.getElementById('diffPanel');
+            const output = document.getElementById('diffOutput');
+            panel.classList.remove('hidden');
+
+            // دالة مقارنة بسيطة وسريعة للكلمات
+            const savedWords = savedYesterdayText.trim().split(/\s+/);
+            const typedWords = typedReviewText.trim().split(/\s+/);
+
+            let diffHTML = "";
+            const maxLength = Math.max(savedWords.length, typedWords.length);
+
+            for (let i = 0; i < maxLength; i++) {
+                const savedWord = savedWords[i] || "";
+                const typedWord = typedWords[i] || "";
+
+                // تنظيف خفيف للعلامات وعلامات الترقيم لمقارنة الكلمات الصافية
+                const cleanSaved = savedWord.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+                const cleanTyped = typedWord.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+
+                if (cleanSaved === cleanTyped && cleanSaved !== "") {
+                    // الكلمات المتطابقة تماماً بالأخضر الداكن عالي التباين
+                    diffHTML += `<span class="text-green-600 font-extrabold mx-1 inline-block">${typedWord}</span>`;
+                } else if (typedWord !== "") {
+                    // الكلمات المغايرة بالأحمر مع إمكانية تحويم الماوس لرؤية الكلمة الأصلية
+                    diffHTML += `<span class="text-red-500 font-extrabold underline decoration-red-600 decoration-2 mx-1 inline-block" title="الكلمة الأصلية بالأمس: ${savedWord}">${typedWord}</span>`;
+                } else {
+                    // كلمة مفقودة
+                    diffHTML += `<span class="text-amber-600 font-bold italic mx-1 inline-block" title="كلمة مفقودة: ${savedWord}">[مفقود]</span>`;
+                }
+            }
+
+            output.innerHTML = diffHTML;
+            // سحب الشاشة بلطف لتظهر لوحة التدقيق بوضوح
+            panel.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function closeDiffPanel() {
+            document.getElementById('diffPanel').classList.add('hidden');
+        }
+
+        // حفظ اليوم والانتقال لليوم التالي مع ترحيل آيات اليوم تلقائياً
+        function commitAndGoToNextDay() {
+            const currentDayData = state.days[state.currentDay];
+            
+            if (!currentDayData || !currentDayData.todayTyped.trim()) {
+                showToast("تنبيه الحفظ 🕊️", "يرجى تدوين وكتابة ورد اليوم غيباً أولاً قبل الانتقال لليوم التالي.", "⚠️");
+                return;
+            }
+
+            currentDayData.isCompleted = true;
+
+            // تحديث اليوم الأقصى الذي وصل إليه الميثاق
+            if (state.currentDay === state.maxReachedDay) {
+                state.maxReachedDay += 1;
+            }
+
+            state.currentDay += 1;
+            
+            showToast("ميثاق مبارك ✨", `تم حفظ تقدم اليوم بنجاح وترحيل وردكِ ليكون مراجعة الغد التلقائية.`, "🎉");
+
+            saveCurrentState();
+            renderLayoutAndBoxes();
+            updateGlobalStats();
+        }
+
+        // احتساب وعرض الإحصائيات العامة للميثاق
+        function updateGlobalStats() {
+            let total = 0;
+            Object.values(state.days).forEach(d => {
+                if (d.isCompleted) {
+                    total += (d.endVerse - d.startVerse + 1);
+                }
+            });
+            document.getElementById('totalVersesLabel').textContent = `${total} آية`;
+        }
+
+        // بناء شريط رحلة الأيام للتصفح والوفرة البصرية بأسفل الصفحة
+        function renderTimeline() {
+            const container = document.getElementById('timelineScroll');
+            container.innerHTML = '';
+
+            const maxToShow = Math.max(state.maxReachedDay, Object.keys(state.days).length);
+
+            for (let i = 1; i <= maxToShow; i++) {
+                const dayData = state.days[i];
+                const isActive = (state.currentDay === i);
+                const isCompleted = dayData && dayData.isCompleted;
+
+                const dayBtn = document.createElement('button');
+                dayBtn.onclick = () => {
+                    // الانتقال السلس والمباشر لأي يوم مسجل
+                    state.currentDay = i;
+                    renderLayoutAndBoxes();
+                };
+
+                let classes = "flex-shrink-0 w-28 py-3.5 px-3 rounded-2xl border transition-all duration-300 flex flex-col items-center justify-center space-y-1 ";
+
+                if (isActive) {
+                    classes += "gold-gradient-bg text-espresso-950 border-gold-dark font-black scale-105 shadow-md shadow-gold-medium/10";
+                } else if (isCompleted) {
+                    classes += "bg-parchment-100 text-espresso-800 border-parchment-200 hover:bg-parchment-200";
+                } else {
+                    classes += "bg-white text-espresso-500 border-parchment-200/60 hover:border-parchment-200 opacity-60";
+                }
+
+                dayBtn.className = classes;
+
+                const dayLabel = document.createElement('span');
+                dayLabel.className = "text-xs font-black block";
+                dayLabel.textContent = `اليوم ${i}`;
+
+                const statusLabel = document.createElement('span');
+                statusLabel.className = "text-[9px] block font-bold opacity-80";
+                if (isCompleted) {
+                    statusLabel.textContent = "تم الحفظ ✓";
+                } else if (isActive) {
+                    statusLabel.textContent = "قيد التسميع 📖";
+                } else {
+                    statusLabel.textContent = "مرتقب ⏳";
+                }
+
+                dayBtn.appendChild(dayLabel);
+                dayBtn.appendChild(statusLabel);
+                container.appendChild(dayBtn);
+            }
+        }
+
+        // التنقل اليدوي للأمام والخلف عبر الأزرار
+        function changeDay(direction) {
+            const targetDay = state.currentDay + direction;
+
+            if (targetDay < 1) {
+                showToast("العتبة الأولى 🌱", "أنتِ بالفعل في بداية ميثاقكِ في اليوم الأول.", "✨");
+                return;
+            }
+
+            if (direction === 1) {
+                const currentDayData = state.days[state.currentDay];
+                if (currentDayData && !currentDayData.todayTyped.trim()) {
+                    showToast("تنبيه الميثاق 🕊️", "يرجى تسميع آيات اليوم النشط أولاً لفتح اليوم التالي بسلاسة.", "⚠️");
+                    return;
+                }
+            }
+
+            state.currentDay = targetDay;
+            renderLayoutAndBoxes();
+        }
+
+        // مسميات الأيام باللغة العربية بوقار وجمال
+        function getArabicDayLabel(num) {
+            const names = ["", "الأول", "الثاني", "الثالث", "الرابع", "الخامس", "السادس", "السابع", "الثامن", "التاسع", "العاشر", "الحادي عشر", "الثاني عشر", "الثالث عشر", "الرابع عشر", "الخامس عشر", "السادس عشر", "السابع عشر", "الثامن عشر", "التاسع عشر", "العشرون"];
+            return names[num] || `${num}`;
+        }
+
+        // توليد تواريخ الميثاق تلقائياً من تاريخ البداية الفعلي المخزن بالتقويم
+        function getFormattedDate(dayNum) {
+            const baseDate = new Date(state.startDate);
+            baseDate.setDate(baseDate.getDate() + (dayNum - 1));
+            return baseDate.toLocaleDateString('ar-EG', { day: 'numeric', month: 'long', year: 'numeric' });
+        }
+
+        // نظام التنبيهات المخصص (Toast Notification)
+        let toastTimer;
+        function showToast(title, desc, emoji) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastDesc').textContent = desc;
+            document.getElementById('toastEmoji').textContent = emoji;
+
+            toast.classList.remove('hidden');
+
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                hideToast();
+            }, 6000);
+        }
+
+        function hideToast() {
+            document.getElementById('toastNotification').classList.add('hidden');
+        }
+
+        // تفعيل وإلغاء نافذة التهيئة (Reset Modal)
+        function triggerResetModal() {
+            document.getElementById('resetModal').classList.remove('hidden');
+        }
+
+        function closeResetModal() {
+            document.getElementById('resetModal').classList.add('hidden');
+        }
+
+        function confirmReset() {
+            state = {
+                currentDay: 1,
+                maxReachedDay: 1,
+                startDate: new Date().toISOString(), // إعادة تعيين تاريخ البداية ليكون تاريخ اليوم الفعلي
+                days: {
+                    1: {
+                        dayNum: 1,
+                        surahName: "الملك",
+                        startVerse: 1,
+                        endVerse: 5,
+                        todayTyped: "",
+                        yesterdaySavedText: "",
+                        yesterdayTypedReview: "",
+                        reviewMode: 'read',
+                        isCompleted: false
+                    }
+                }
+            };
+            closeResetModal();
+            saveCurrentState();
+            renderLayoutAndBoxes();
+            updateGlobalStats();
+            showToast("بداية جديدة 🕊️", "تم تهيئة ميثاقكِ بنجاح، لتبدئي من جديد بروح عالية مستمرة.", "🌱");
+        }
+    </script>
+</body>
+</html>
