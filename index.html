@@ -107,71 +107,55 @@
     <!-- ========================================== -->
     <!-- 1. واجهة الدخول (Splash / Landing View)     -->
     <!-- ========================================== -->
-    <div id="entryScreen" class="view-transition fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#FBF9F3] canva-dot-bg overflow-y-auto">
+    <div id="entryScreen" class="view-transition fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#FAF7F2] select-none overflow-y-auto">
         
-        <!-- كارت واجهة الدخول المطابق للصورة تماماً -->
-        <div onclick="enterSystem()" class="relative w-full max-w-md bg-[#FAF7F0] rounded-[2.5rem] border border-[#EADFCB] shadow-2xl p-6 sm:p-10 flex flex-col items-center justify-between min-h-[640px] cursor-pointer hover:border-gold-medium transition-all duration-300 group">
+        <!-- كارت واجهة الدخول المتطابق مع الصورة -->
+        <div onclick="enterSystem()" class="relative w-full max-w-sm sm:max-w-md bg-[#FAF7F2] rounded-[2.5rem] p-6 sm:p-10 flex flex-col items-center justify-between min-h-[620px] cursor-pointer transition-all duration-300 group">
             
-            <!-- زر إرشادي علوي -->
-            <div class="w-full flex justify-between items-center opacity-60 text-xs text-espresso-600 font-bold mb-4">
-                <span class="flex items-center space-x-reverse space-x-1">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-ping"></span>
-                    <span>ميثاق الحفظ</span>
-                </span>
-                <span>انقري للدخول ➔</span>
-            </div>
-
-            <!-- الجزء الأوسط: تصميم اللوجو والعناوين جنباً إلى جنب كالصورة تماماً -->
-            <div class="w-full my-auto py-8 flex items-center justify-center space-x-reverse space-x-4 sm:space-x-6">
+            <!-- الجزء الأوسط: الشعار والنصوص المتطابقة تماماً مع الصورة -->
+            <div class="w-full my-auto py-6 flex items-center justify-center space-x-reverse space-x-4 sm:space-x-5">
                 
-                <!-- 1. النصوص على اليسار (RTL Left) -->
-                <div class="text-right space-y-1">
-                    <h1 class="text-3xl sm:text-4xl font-black text-[#3D2418] tracking-tight font-kufi leading-tight">
+                <!-- 1. النصوص على اليسار (RTL) -->
+                <div class="text-right space-y-1.5">
+                    <h1 class="text-4xl sm:text-5xl font-black text-[#4A2E2B] tracking-tight font-kufi leading-none">
                         ميثاق<br>الحفْظ
                     </h1>
-                    <div class="text-xs sm:text-sm font-bold text-[#3D2418] pt-1 space-y-0.5 font-cairo">
-                        <p class="tracking-wide">تخطيط الذكي</p>
-                        <p class="tracking-wide">التسميع والترحيل</p>
-                        <p class="tracking-wide">التلقائي</p>
+                    <div class="text-base sm:text-lg font-bold text-[#4A2E2B] pt-2 space-y-0.5 font-cairo leading-snug">
+                        <p class="tracking-normal">تخطيط الذكي</p>
+                        <p class="tracking-normal">التسميع والترحيل</p>
+                        <p class="tracking-normal">التلقائي</p>
                     </div>
                 </div>
 
-                <!-- 2. الشعار الدائري الذهبي على اليمين (RTL Right) -->
-                <div class="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full border-4 border-[#F4CA54] flex items-center justify-center bg-white shadow-lg shrink-0 group-hover:scale-105 transition-transform duration-500">
-                    <!-- أيقونة المصحف الشريف على حامل الخشب (الرَحل) المطابقة للصورة -->
-                    <svg class="w-16 h-16 sm:w-20 sm:h-20 text-[#D4AF37]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- المصحف المفتوح -->
-                        <path d="M50 32 C40 22 24 25 14 30 V60 C24 55 40 52 50 62 C60 52 76 55 86 60 V30 C76 25 60 22 50 32 Z" fill="#F4CA54" stroke="#A05E22" stroke-width="3" stroke-linejoin="round"/>
-                        <path d="M50 32 V62" stroke="#A05E22" stroke-width="3"/>
-                        <!-- زخرفة دائرية منتصف المصحف -->
-                        <circle cx="50" cy="46" r="5" stroke="#3D2418" stroke-width="2" fill="none"/>
-                        <!-- حامل المصحف الخشبي (Rehal X-stand) -->
-                        <path d="M22 58 L78 84 M78 58 L22 84" stroke="#A05E22" stroke-width="5" stroke-linecap="round"/>
+                <!-- 2. الشعار الدائري الذهبي بالكامل (الآيقونة والإطار) -->
+                <div class="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full border-[5px] border-[#E8C252] flex items-center justify-center bg-transparent shrink-0 group-hover:scale-105 transition-transform duration-500">
+                    <svg class="w-20 h-20 sm:w-24 sm:h-24 text-[#C19231]" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- المصحف المفتوح والحامل الذهبي بتفاصيل مطابقة للصورة -->
+                        <!-- الحامل الخشبي السفلي -->
+                        <path d="M35 85 L60 65 L85 85 M42 78 L78 78" stroke="#B28228" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- صفحات المصحف المفتوح -->
+                        <path d="M25 50 C40 45 55 48 60 55 C65 48 80 45 95 50 L90 73 C78 68 65 70 60 75 C55 70 42 68 30 73 Z" fill="#E8C252" stroke="#B28228" stroke-width="2.5" stroke-linejoin="round"/>
+                        <!-- تفاصيل الصفحة الداخلية والشعار -->
+                        <path d="M60 55 V75" stroke="#B28228" stroke-width="2"/>
+                        <path d="M42 58 C48 56 54 57 57 60" stroke="#B28228" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M78 58 C72 56 66 57 63 60" stroke="#B28228" stroke-width="1.5" stroke-linecap="round"/>
+                        <!-- النقش الزخرفي المعيني في المنتصف -->
+                        <polygon points="60,40 68,48 60,56 52,48" fill="#E8C252" stroke="#B28228" stroke-width="2"/>
                     </svg>
-                    <!-- إضاءة خلفية دائرية ناعمة -->
-                    <div class="absolute inset-0 rounded-full bg-[#F4CA54]/10 blur-sm -z-10"></div>
                 </div>
 
             </div>
 
-            <!-- الجزء السفلي: زر "ابدأ رحلة الحفظ" والمؤشر السفلي -->
-            <div class="w-full space-y-6 pt-4 flex flex-col items-center">
-                <!-- زر "ابدأ رحلة الحفظ" المطابق للصورة -->
-                <button onclick="event.stopPropagation(); enterSystem();" class="w-full py-4 px-8 bg-[#F4CA54] hover:bg-[#E5B942] active:scale-95 text-[#3D2418] text-lg sm:text-xl font-extrabold rounded-2xl shadow-md border border-[#E5B942] transition-all duration-300 btn-pulse flex items-center justify-center">
+            <!-- الجزء السفلي: زر "ابدأ رحلة الحفظ" بنفس النمط واللون والحواف الدائرية الناعمة -->
+            <div class="w-full pt-6 flex justify-center">
+                <button onclick="event.stopPropagation(); enterSystem();" class="w-full sm:w-11/12 py-4 px-6 bg-[#EECE5A] hover:bg-[#E5C148] active:scale-95 text-[#4A2E2B] text-2xl sm:text-3xl font-extrabold rounded-full shadow-sm transition-all duration-300 font-amiri tracking-wide flex items-center justify-center">
                     <span>ابدأ رحلة الحفظ</span>
                 </button>
-
-                <!-- مؤشر الصفحات السفلي (Pill slider indicator) المطابق للصورة -->
-                <div class="bg-[#EAE4D6]/70 px-4 py-1.5 rounded-full flex items-center space-x-reverse space-x-2">
-                    <div class="w-6 h-2 rounded-full bg-[#706456]"></div>
-                    <div class="w-2 h-2 rounded-full bg-[#BDB3A4]"></div>
-                </div>
             </div>
 
         </div>
 
     </div>
-
 
     <!-- ========================================== -->
     <!-- 2. واجهة النظام الرئيسية (Dashboard View)  -->
@@ -316,7 +300,7 @@
                         </div>
                         <div class="p-4 bg-parchment-50 rounded-2xl border border-parchment-200 space-y-3">
                             <p class="text-xs text-espresso-600 font-semibold leading-relaxed">الكلمات باللون <span class="text-green-600 font-black">الأخضر</span> تعني مطابقتها لحفظ أمس، بينما الكلمات باللون <span class="text-red-500 font-black">الأحمر</span> تشير إلى وجود اختلاف في الكتابة لتنتبهي لها وتصححيها يدوياً:</p>
-                            <div id="diffOutput" class="text-xl md:text-2xl font-amiri text-espresso-950 text-center leading-loose tracking-wider py-5 bg-white rounded-xl border border-parchment-200 p-5 min-h-[100px]">
+                            <div id="diffOutput" class="text-xl md:text-2xl font-amiri text-espresso-950 text-right leading-loose tracking-wider py-5 bg-white rounded-xl border border-parchment-200 p-5 min-h-[100px]">
                                 <!-- مقارنة الكلمات الملونة تظهر هنا -->
                             </div>
                         </div>
@@ -348,7 +332,7 @@
                     <span>ميثاق الحفظ والاستمرارية والمراجعة الذاتية • خطة السكينة النفسية والاتصال ببركات آيات الذكر الحكيم.</span>
                 </div>
                 <div class="flex items-center space-x-reverse space-x-2">
-                    <span class="text-gold-dark font-extrabold">جميع حقوق النشر محفوظة لتصميم وتطوير هدايه عودات © ٢٠٢٦ 🌿</span>
+                    <span class="text-gold-dark font-extrabold">جميع حقوق النشر محفوظة لتصميم وتطوير هدايه عودات ©️ ٢٠٢٦ 🌿</span>
                 </div>
             </div>
         </footer>
@@ -543,7 +527,7 @@
                             </h4>
                             <span class="text-xs text-gold-dark bg-parchment-100 font-extrabold px-3 py-1 rounded-full border border-parchment-200">حفظ اليوم الأول</span>
                         </div>
-                        <textarea id="todayTypedArea" oninput="saveTypedText(this.value, 'today')" placeholder="اكتبي آيات اليوم غيباً وبكل هدوء وسكينة هنا..." class="w-full min-h-[300px] bg-parchment-50 text-xl font-amiri text-espresso-950 p-6 rounded-2xl border border-parchment-200 focus:outline-none focus:border-gold-medium transition leading-loose tracking-wide placeholder:text-espresso-600 placeholder:text-sm placeholder:font-cairo resize-y">${activeDayData.todayTyped || ""}</textarea>
+                        <textarea id="todayTypedArea" oninput="saveTypedText(this.value, 'today')" placeholder="اكتبي آيات اليوم غيباً وبكل هدوء وسكينة هنا..." class="w-full min-h-[300px] bg-parchment-50 text-xl font-amiri text-espresso-950 p-6 rounded-2xl border border-parchment-200 focus:outline-none focus:border-gold-medium transition leading-loose tracking-wide placeholder:text-espresso-600 placeholder:text-sm placeholder:font-cairo resize-y text-right">${activeDayData.todayTyped || ""}</textarea>
                         <div class="text-left text-[11px] text-espresso-600 font-bold">
                             اكتبي الآيات غيباً بتمهل، واطمئني فكل حرف يُحسب ببركته في ميثاقكِ.
                         </div>
@@ -557,8 +541,8 @@
                 if (isReadMode) {
                     compareBtn.classList.add('hidden');
                     reviewBoxContent = `
-                        <div class="bg-parchment-50 p-6 rounded-2xl border border-parchment-200 flex items-center justify-center min-h-[250px] overflow-y-auto max-h-[350px]">
-                            <p class="text-xl md:text-2xl font-amiri text-espresso-900 text-center leading-loose tracking-wide italic select-none">
+                        <div class="bg-parchment-50 p-6 rounded-2xl border border-parchment-200 flex items-start justify-start min-h-[250px] overflow-y-auto max-h-[350px] w-full">
+                            <p class="text-xl md:text-2xl font-amiri text-espresso-900 text-right leading-loose tracking-wide select-none w-full whitespace-normal break-words">
                                 ${activeDayData.yesterdaySavedText ? activeDayData.yesterdaySavedText : "لم يتم تسجيل آيات بالأمس يدوياً."}
                             </p>
                         </div>
@@ -566,7 +550,7 @@
                 } else {
                     compareBtn.classList.remove('hidden');
                     reviewBoxContent = `
-                        <textarea id="yesterdayTypedReviewArea" oninput="saveTypedText(this.value, 'yesterday')" placeholder="حاولي كتابة آيات مراجعة أمس غيباً هنا لمطابقتها وتصحيحها..." class="w-full min-h-[250px] bg-parchment-50 text-xl font-amiri text-espresso-950 p-6 rounded-2xl border border-parchment-200 focus:outline-none focus:border-gold-medium transition leading-loose tracking-wide placeholder:text-espresso-600 placeholder:text-sm placeholder:font-cairo resize-y">${activeDayData.yesterdayTypedReview || ""}</textarea>
+                        <textarea id="yesterdayTypedReviewArea" oninput="saveTypedText(this.value, 'yesterday')" placeholder="حاولي كتابة آيات مراجعة أمس غيباً هنا لمطابقتها وتصحيحها..." class="w-full min-h-[250px] bg-parchment-50 text-xl font-amiri text-espresso-950 p-6 rounded-2xl border border-parchment-200 focus:outline-none focus:border-gold-medium transition leading-loose tracking-wide placeholder:text-espresso-600 placeholder:text-sm placeholder:font-cairo resize-y text-right">${activeDayData.yesterdayTypedReview || ""}</textarea>
                     `;
                 }
 
@@ -580,7 +564,7 @@
                                 </h4>
                                 <span class="text-xs bg-gold-dark/10 text-gold-dark px-3 py-1 rounded-full border border-gold-dark/20 font-bold">ورد اليوم</span>
                             </div>
-                            <textarea id="todayTypedArea" oninput="saveTypedText(this.value, 'today')" placeholder="اكتبي آيات الورد الجديد هنا غيباً من صدركِ..." class="w-full min-h-[250px] bg-parchment-50 text-xl font-amiri text-espresso-950 p-6 rounded-2xl border border-parchment-200 focus:outline-none focus:border-gold-medium transition leading-loose tracking-wide placeholder:text-espresso-600 placeholder:text-sm placeholder:font-cairo resize-y">${activeDayData.todayTyped || ""}</textarea>
+                            <textarea id="todayTypedArea" oninput="saveTypedText(this.value, 'today')" placeholder="اكتبي آيات الورد الجديد هنا غيباً من صدركِ..." class="w-full min-h-[250px] bg-parchment-50 text-xl font-amiri text-espresso-950 p-6 rounded-2xl border border-parchment-200 focus:outline-none focus:border-gold-medium transition leading-loose tracking-wide placeholder:text-espresso-600 placeholder:text-sm placeholder:font-cairo resize-y text-right">${activeDayData.todayTyped || ""}</textarea>
                         </div>
                         <div class="text-[11px] text-espresso-600 mt-3 font-bold">تأني بالترتيل وأنتِ تكتبين لتستشعري بركة الكلمات في وجدانكِ.</div>
                     </div>
