@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ميثاق الحفظ - واجهة الدخول والنظام الذكي</title>
+    <title>ميثاق الحفظ  </title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts for Elegant Arabic Typography -->
@@ -101,6 +101,11 @@
             animation: pulse-subtle 3s infinite ease-in-out;
         }
     </style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#26150D">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ميثاق الحفظ">
 </head>
 <body class="min-h-screen flex flex-col justify-between">
 
@@ -803,5 +808,8 @@
             showToast("بداية جديدة 🕊️", "تم تهيئة ميثاقكِ بنجاح، لتبدئي من جديد بروح عالية مستمرة.", "🌱");
         }
     </script>
+<script>
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js'); }
+</script>
 </body>
 </html>
